@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"
+//LINK - utils
+import { useStyles } from "./customHooks/useStyles"
+import PersonalInfo from "./layouts/PersonalInfo"
 
 function App() {
+  const { isMobileDevice } = useStyles()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App"
+      style={{
+        height: isMobileDevice ? "100%" : "100vh",
+        backgroundColor: "hsl(217, 100%, 97%)",
+        display: isMobileDevice ? "block" : "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <PersonalInfo />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
