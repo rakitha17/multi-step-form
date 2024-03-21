@@ -1,11 +1,11 @@
 import React from "react"
-//LINK - utils
-import { useStyles } from "../../../customHooks/useStyles"
 import UpperLayout from "./contentLayout/UpperLayout"
 import FooterBar from "./contentLayout/FooterBar"
+import { useLocation } from "react-router"
 
 export default function ContentLayout({ children }) {
-  const { isMobileDevice } = useStyles()
+  const location = useLocation()
+
   return (
     <div
       className="ContentLayout"
@@ -17,20 +17,20 @@ export default function ContentLayout({ children }) {
         position: "relative",
       }}
     >
-      <div style={{ height: "fit-content" }}>
+      <div style={{ flex: 8, overflow: "hidden" }}>
         <UpperLayout children={children} />
       </div>
-      <div
-        style={{
-          height: "fit-content",
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-        }}
-      >
-        <FooterBar />
-      </div>
+      {location.pathname !== "/thank-you" && (
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <FooterBar />
+        </div>
+      )}
     </div>
   )
 }

@@ -22,8 +22,8 @@ export default function MainContainer({ children }) {
         padding: isMobileDevice ? 0 : globalStyles.padding,
         borderRadius: isMobileDevice ? 0 : "10px",
         position: "relative",
-        // backgroundColor: "#90EE90",
         boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+        backgroundColor: isMobileDevice ? "transparent" : "#fff",
       }}
     >
       {
@@ -47,7 +47,6 @@ export default function MainContainer({ children }) {
         style={{
           width: "100%",
           height: "100%",
-          // backgroundColor: "#fff",
           position: "relative",
           zIndex: 2,
         }}

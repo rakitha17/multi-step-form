@@ -1,6 +1,7 @@
 import React from "react"
 //LINK - utils
 import { useStyles } from "../../../../customHooks/useStyles"
+import NextButton from "../../../../components/common/footerBar/NextButton"
 
 export default function FooterBar() {
   const { isMobileDevice } = useStyles()
@@ -11,19 +12,19 @@ export default function FooterBar() {
   }
   return (
     <div
+      className="FooterBar"
       style={{
         width: "100%",
         display: "flex",
-        columnGap: globalStyles.columnGap,
         justifyContent: "flex-end",
-        backgroundColor: "#fff",
-
+        backgroundColor: isMobileDevice ? "#fff" : "transparent",
       }}
     >
       <div
         style={{
-          flexBasis: isMobileDevice ? '100%' : `calc(100% - (${globalStyles.flexBasis} + ${globalStyles.columnGap}))`,
-          backgroundColor: "#FFB6C1",
+          flexBasis: isMobileDevice
+            ? "100%"
+            : `calc(100% - (${globalStyles.flexBasis} + ${globalStyles.columnGap}))`,
         }}
       >
         <div
@@ -31,11 +32,9 @@ export default function FooterBar() {
             width: isMobileDevice ? "100%" : "90%",
             padding: "20px",
             margin: "0 auto",
-            backgroundColor: "#7B68EE",
-            textAlign: "end",
           }}
         >
-          right side
+          <NextButton />
         </div>
       </div>
     </div>
