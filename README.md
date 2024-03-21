@@ -19,7 +19,7 @@ This project is built using ReactJS. This app consists of 4 steps to subscribe t
 
 ### Links
 
-- Live Site URL: 
+- Live Site URL: https://multi-step-form-app-demo.netlify.app/
 
 ## My Process
 
@@ -28,6 +28,7 @@ This project is built using ReactJS. This app consists of 4 steps to subscribe t
 - React
 - Redux
 - React-router
+- RegEx
 - MUI
 - React-bootstrap
 - Framer-motion
